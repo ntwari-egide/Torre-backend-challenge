@@ -1,3 +1,8 @@
+/**
+ * @author: ntwari egide
+ * @description: skills type service implementation
+ */
+
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { SkillsTypeNotFoundException } from 'src/exceptions/PostTypeNotFoundException';

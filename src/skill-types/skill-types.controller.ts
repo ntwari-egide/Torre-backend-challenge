@@ -1,3 +1,8 @@
+/**
+ * @author: ntwari egide
+ * @description: skills type endpoints controller
+ */
+
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { SkillTypesService } from './skill-types.service';
 import { CreateSkillTypeDto } from './dto/create-skill-type.dto';
