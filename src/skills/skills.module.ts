@@ -4,6 +4,7 @@ import { SkillsController } from './skills.controller';
 import { DatabaseModule } from 'src/database/database.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { skillsProvider } from './skills.provider';
+import { skillsTypesProvovider } from 'src/skill-types/skill-type.provider';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { skillsProvider } from './skills.provider';
   controllers: [SkillsController],
   providers: [
     SkillsService,
-    ...skillsProvider
+    ...skillsProvider,
+    ...skillsTypesProvovider
   ]
 })
 export class SkillsModule {}
