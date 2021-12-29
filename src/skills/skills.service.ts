@@ -1,3 +1,8 @@
+/**
+ * @author: ntwari egide
+ * @description: skill service
+ */
+
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { SkillsNotFoundException } from 'src/exceptions/SkillNotFoundException';

@@ -1,3 +1,8 @@
+/**
+ * @author: ntwari egide
+ * @description: skill endpoints handler
+ */
+
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { CreateSkillsDto } from './dto/create-skill.dto';
 import { UpdateSkillsDto } from './dto/update-skill.dto';

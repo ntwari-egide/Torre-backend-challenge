@@ -4,7 +4,7 @@ export const databaseProviders = [
   {
     provide: 'DATABASE_CONNECTION',
     useFactory: (): Promise<typeof mongoose> =>
-      mongoose.connect('mongodb+srv://root:edaedaeda@cluster0.ulkpq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+      mongoose.connect('mongodb+srv://egide:12345@cluster0.9zsmg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
       ,
   },
 ];
