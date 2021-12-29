@@ -7,9 +7,6 @@
 import * as mongoose from 'mongoose';
 
 export const UserSchema = new mongoose.Schema({
-  role: Number,
-
-  email: String,
 
   username: String,
 
