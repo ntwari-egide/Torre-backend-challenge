@@ -25,8 +25,6 @@ export class UserService {
 
     const saltOrRounds = 10;
 
-    const password = 'random_password';
-
     let createUser = new this.userModal(createUserDto)
 
     createUser.password =  await bcrypt.hash(createUser.password, saltOrRounds);
