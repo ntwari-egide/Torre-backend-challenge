@@ -5,7 +5,7 @@
 
  import { ApiProperty } from "@nestjs/swagger"
 
- export class CreateUserDto {
+ export class UpdateSkillTypeDto {
  
    
      @ApiProperty({

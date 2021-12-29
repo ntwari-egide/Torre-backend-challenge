@@ -1,9 +1,16 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { Model } from 'mongoose';
 import { CreateSkillTypeDto } from './dto/create-skill-type.dto';
 import { UpdateSkillTypeDto } from './dto/update-skill-type.dto';
 
 @Injectable()
 export class SkillTypesService {
+  constructor(  
+    @Inject('SKILLS_TYPE_MODEL')
+    private userModal: Model<User>
+  ){}
+
+
   create(createSkillTypeDto: CreateSkillTypeDto) {
     return 'This action adds a new skillType';
   }
