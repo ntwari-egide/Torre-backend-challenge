@@ -1,33 +1,76 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { Model } from 'mongoose';
+import { SkillsTypeNotFoundException } from 'src/exceptions/PostTypeNotFoundException';
 import { CreateSkillTypeDto } from './dto/create-skill-type.dto';
 import { UpdateSkillTypeDto } from './dto/update-skill-type.dto';
+import { SkillsType } from './skill-type.interface';
 
 @Injectable()
 export class SkillTypesService {
   constructor(  
     @Inject('SKILLS_TYPE_MODEL')
-    private userModal: Model<User>
+    private skillsTypeModel: Model<SkillsType>
   ){}
+
+  private readonly logger = new Logger(SkillTypesService.name)
 
 
   create(createSkillTypeDto: CreateSkillTypeDto) {
-    return 'This action adds a new skillType';
+
+    let createSkillType = new this.skillsTypeModel(createSkillTypeDto)
+    
+    return createSkillType.save()
   }
 
-  findAll() {
-    return `This action returns all skillTypes`;
+  async findAll(): Promise<SkillsType[]> {
+
+    this.logger.log('Getting list of all skills types')
+
+    return this.skillsTypeModel.find().exec()
+
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} skillType`;
+  checkUserExistance = (id: String) : User => {
+    let user : any
+    try {
+      user = this.skillsTypeModel.findById(id).exec()
+
+      this.logger.log('Getting skills type with id : '+id)
+      
+    } catch (error) {
+
+      this.logger.log('Getting skills type with id: '+id+" has failed")
+
+      throw new SkillsTypeNotFoundException('skill type with id '+id+ ' is not found')
+
+    }
+
+    return user
   }
 
-  update(id: number, updateSkillTypeDto: UpdateSkillTypeDto) {
-    return `This action updates a #${id} skillType`;
+  async findOne(id: String): Promise<User> {
+
+    return this.checkUserExistance(id)
+
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} skillType`;
+  async update(id: String, updates: UpdateSkillTypeDto): Promise<User> {
+    
+    this.checkUserExistance(id)
+
+    this.logger.log('Updating skill type with id : '+id)
+
+    return this.skillsTypeModel.findByIdAndUpdate(id,updates).exec()
+
+  }
+
+  async remove(id: String) {
+    
+    this.checkUserExistance(id)
+
+    this.logger.log('Deleting skill type with id : '+id)
+
+    return this.skillsTypeModel.findByIdAndRemove(id).exec()
+
   }
 }

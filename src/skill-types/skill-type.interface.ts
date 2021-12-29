@@ -6,7 +6,8 @@
 
  import { Document } from 'mongoose';
 
- export interface User extends Document {
+ export interface SkillsType extends Document {
+
     name: String,
 
     desription: String,

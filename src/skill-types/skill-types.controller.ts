@@ -19,16 +19,16 @@ export class SkillTypesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.skillTypesService.findOne(+id);
+    return this.skillTypesService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSkillTypeDto: UpdateSkillTypeDto) {
-    return this.skillTypesService.update(+id, updateSkillTypeDto);
+    return this.skillTypesService.update(id, updateSkillTypeDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.skillTypesService.remove(+id);
+    return this.skillTypesService.remove(id);
   }
 }
