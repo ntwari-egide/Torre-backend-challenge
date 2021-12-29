@@ -27,6 +27,12 @@ export class SkillsController {
     return this.skillsService.findOne(id);
   }
 
+  
+  @Get('/skill-type/:skillTypeId')
+  findBySkillType(@Param('skillTypeId') id: string) {
+    return this.skillsService.findBySkillTyp(id);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSkillDto: UpdateSkillsDto) {
     return this.skillsService.update(id, updateSkillDto);
