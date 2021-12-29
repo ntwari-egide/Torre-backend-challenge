@@ -1,4 +1,29 @@
-import { PartialType } from '@nestjs/swagger';
-import { CreateSkillTypeDto } from './create-skill-type.dto';
+/**
+ * @author: ntwari egide
+ * @description: update skills type dto
+ */
 
-export class UpdateSkillTypeDto extends PartialType(CreateSkillTypeDto) {}
+ import { ApiProperty } from "@nestjs/swagger"
+
+ export class CreateUserDto {
+ 
+   
+     @ApiProperty({
+         description: "Skill type name ",
+         type: String
+     })
+     name: String
+   
+     @ApiProperty({
+         description: "skills type description",
+         type: String
+     })
+     description: String
+   
+     @ApiProperty({
+         description: "Date of creation",
+         type: Date
+     })
+     createdAt: Date
+ }
+ 
