@@ -30,4 +30,10 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
         type: Date
     })
     updatedAt: Date
+
+    @ApiProperty({
+        description: "Is user verified",
+        type: Boolean
+    })
+    verified: Boolean
 }

@@ -14,7 +14,9 @@ export const UserSchema = new mongoose.Schema({
 
   joinedAt: Date,
 
-  updatedAt: Date
+  updatedAt: Date,
+
+  verified: Boolean
 
 
 });
