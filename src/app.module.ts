@@ -9,9 +9,10 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { UserModule } from './user/user.module';
 import { SkillTypesModule } from './skill-types/skill-types.module';
+import { SkillsModule } from './skills/skills.module';
 
 @Module({
-  imports: [ UserModule,DatabaseModule, SkillTypesModule],
+  imports: [ UserModule,DatabaseModule, SkillTypesModule, SkillsModule],
   controllers: [AppController],
   providers: [AppService],
 })
