@@ -5,7 +5,7 @@
 
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { SkillsTypeNotFoundException } from 'src/exceptions/PostTypeNotFoundException';
+import { SkillsTypeNotFoundException } from 'src/exceptions/SkillTypeNotFoundException';
 import { CreateSkillTypeDto } from './dto/create-skill-type.dto';
 import { UpdateSkillTypeDto } from './dto/update-skill-type.dto';
 import { SkillsType } from './skill-type.interface';

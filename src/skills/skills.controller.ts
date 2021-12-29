@@ -1,14 +1,14 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { CreateSkillsDto } from './dto/create-skill.dto';
+import { UpdateSkillsDto } from './dto/update-skill.dto';
 import { SkillsService } from './skills.service';
-import { CreateSkillDto } from './dto/create-skill.dto';
-import { UpdateSkillDto } from './dto/update-skill.dto';
 
 @Controller('skills')
 export class SkillsController {
   constructor(private readonly skillsService: SkillsService) {}
 
   @Post()
-  create(@Body() createSkillDto: CreateSkillDto) {
+  create(@Body() createSkillDto: CreateSkillsDto) {
     return this.skillsService.create(createSkillDto);
   }
 
@@ -19,16 +19,16 @@ export class SkillsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.skillsService.findOne(+id);
+    return this.skillsService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSkillDto: UpdateSkillDto) {
-    return this.skillsService.update(+id, updateSkillDto);
+  update(@Param('id') id: string, @Body() updateSkillDto: UpdateSkillsDto) {
+    return this.skillsService.update(id, updateSkillDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.skillsService.remove(+id);
+    return this.skillsService.remove(id);
   }
 }

@@ -1,6 +1,6 @@
 /**
  * @author: ntwari egide
- * @description: skills type modal implementation
+ * @description: User modal implementation
  */
 
 

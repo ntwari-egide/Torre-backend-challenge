@@ -4,7 +4,7 @@
  */
 
 
- import * as mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import { SkillsTypeSchema } from 'src/skill-types/entities/skill-type.entity';
 
  export const SkillSchema = new mongoose.Schema({
