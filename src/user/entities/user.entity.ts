@@ -18,5 +18,4 @@ export const UserSchema = new mongoose.Schema({
 
   verified: Boolean
 
-
 });
