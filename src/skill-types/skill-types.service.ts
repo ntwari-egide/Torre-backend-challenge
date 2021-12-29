@@ -35,10 +35,10 @@ export class SkillTypesService {
 
   }
 
-  checkUserExistance = (id: String) : User => {
-    let user : any
+  checkUserExistance = (id: String) : SkillsType => {
+    let type : any
     try {
-      user = this.skillsTypeModel.findById(id).exec()
+      type = this.skillsTypeModel.findById(id).exec()
 
       this.logger.log('Getting skills type with id : '+id)
       
@@ -50,16 +50,16 @@ export class SkillTypesService {
 
     }
 
-    return user
+    return type
   }
 
-  async findOne(id: String): Promise<User> {
+  async findOne(id: String): Promise<SkillsType> {
 
     return this.checkUserExistance(id)
 
   }
 
-  async update(id: String, updates: UpdateSkillTypeDto): Promise<User> {
+  async update(id: String, updates: UpdateSkillTypeDto): Promise<SkillsType> {
     
     this.checkUserExistance(id)
 
